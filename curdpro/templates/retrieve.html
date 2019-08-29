@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Retrieve Form</title>
+</head>
+<style>
+    th,td{
+        padding: 10px 20px;
+    }
+</style>
+<body>
+{% if products %}
+<center>
+<table border="2px">
+<h1>Product Data</h1>
+    <thead>
+    <tr>
+        <th>product_id</th>
+        <th>product_name</th>
+        <th>product_cost</th>
+        <th>product_color</th>
+        <th>product_class</th>
+    </tr>
+    </thead>
+    {% for i in products %}
+        <tbody>
+        <tr>
+            <td>{{ i.product_id }}</td>
+            <td>{{ i.product_name }}</td>
+            <td>{{ i.product_cost }}</td>
+            <td>{{ i.product_color }}</td>
+            <td>{{ i.product_class }}</td>
+        </tr>
+        </tbody>
+    {% endfor %}
+</table>
+</center>
+{% else %}
+<h1>Products are not Available</h1>
+{% endif %}
+</body>
+</html>
